@@ -28,18 +28,18 @@ var createSongRow = function(songNumber, songName, songLength) {
 	var songNumber = $(this).attr('data-song-number');
 
 
-    if (setSong(songNumber)) {
+    if setSong(songNumber) {
         var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
      }
 
 
-    if (setSong(songNumber)) {
+    if setSong(songNumber) {
         $(this).html(pauseButtonTemplate);
         setSong(songNumber);
         setSong(songNumber);
         updatePlayerBarSong();
 
-    } else if (setSong(songNumber)) {
+    } else if setSong(songNumber) {
          $(this).html(playButtonTemplate);
          $('.main-controls .play-pause').html(playerBarPlayButton);
          setSong(songNumber);
@@ -53,8 +53,8 @@ var createSongRow = function(songNumber, songName, songLength) {
         var songNumberCell = $(this).find('.song-item-number');
         var songNumber = songNumberCell.attr('data-song-number');
 
-        if (setSong(songNumber)) {
-            songNumberCell.html(playButtonTemplate);
+        if setSong(songNumber) {
+        songNumberCell.html(playButtonTemplate);
         }
     };
 
@@ -62,8 +62,8 @@ var createSongRow = function(songNumber, songName, songLength) {
         var songNumberCell = $(this).find('.song-item-number');
         var songNumber = songNumberCell.attr('data-song-number');
 
-        if (setSong(songNumber)) {
-            songNumberCell.html(songNumber);
+        if setSong(songNumber) {
+        songNumberCell.html(songNumber);
         }
     };
     
@@ -136,11 +136,9 @@ var previousSong = function() {
     // Save the last song number before changing it
     var lastSongNumber = setSong(songNumber);
 
-    // Set a new current song
     setSong(songNumber);
     setSong(songNumber);
 
-    // Update the Player Bar information
     updatePlayerBarSong();
 
     $('.main-controls .play-pause').html(playerBarPauseButton);
